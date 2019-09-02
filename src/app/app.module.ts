@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BCategoriesComponent } from './b-categories/b-categories.component';
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BCategoriesComponent,
-    CategoryDetailComponent
+    CategoryDetailComponent,
+    MessagesComponent
   ],
   imports: [
     FormsModule,
