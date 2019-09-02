@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { BCategoriesComponent } from './b-categories/b-categories.component';
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BCategoriesComponent,
     CategoryDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     FormsModule,
