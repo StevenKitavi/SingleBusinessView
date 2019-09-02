@@ -1,0 +1,16 @@
+<div>
+<h2>My Authorised Dealers </h2>
+<ul class="businesses">
+    <li *ngFor="let business of businesses"
+    
+    [class.selected] = "business === selectedBusiness"
+    (click)="onSelect(business)">
+
+
+    <span class= "badge">{{ business.id }}</span>{{business.name}}
+    </li>
+</ul>
+
+<app-category-detail [business] = "selectedBusiness"></app-category-detail>
+
+</div>
