@@ -1,5 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Business } from '../business'
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { Business } from '../business';
+import { BusinessService } from '../business.service';
+
  
 @Component({
   selector: 'app-category-detail',
@@ -8,12 +12,27 @@ import { Business } from '../business'
 })
 export class CategoryDetailComponent implements OnInit {
 
-  @Input() business: Business;  
+  business: Business;
 
   
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private businessService: BusinessService,
+    private location: Location,
 
-  ngOnInit() {
+  ) { }
+
+  ngOnInit(): void {
+    this.getBusinesses();
+    
   }
 
+  getBusinesses(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.businessService.getBusinesses(id)
+        .subscribe(business => this.business = business);
+  }
+  goBack(): void {
+    this.location.back();
+  }
 }
