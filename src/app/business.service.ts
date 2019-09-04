@@ -19,10 +19,10 @@ export class BusinessService {
     return of (Businesses);
   }
 
-  getBusinesses(id: number): Observable<Business[]>{
+  getBusinesses(id: number): Observable<Business>{
     // this send the message _after_ fetching the business
     this.messageService.add(`BusinessService: fetched businesses id = ${id}`);
-    return  of ( Businesses.find (business => business.id === id ));
+    return  of ( Businesses.find(business => business.id === id ));
   }
   
 }
