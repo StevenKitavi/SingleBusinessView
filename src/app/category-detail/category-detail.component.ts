@@ -12,7 +12,7 @@ import { BusinessService } from '../business.service';
 })
 export class CategoryDetailComponent implements OnInit {
 
-  business: Business;
+  @Input() business: Business;
 
   
   constructor(
@@ -20,7 +20,7 @@ export class CategoryDetailComponent implements OnInit {
     private businessService: BusinessService,
     private location: Location,
 
-  ) { }
+  )  {}
 
   ngOnInit(): void {
     this.getBusinesses();
@@ -34,5 +34,10 @@ export class CategoryDetailComponent implements OnInit {
   }
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void{
+    this.businessService.updateBusiness(this.business)
+      .subscribe(() => this.goBack())
   }
 }

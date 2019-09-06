@@ -7,6 +7,10 @@ import { BCategoriesComponent } from './b-categories/b-categories.component';
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import {InMemoryDataService } from './in-memory-data.service';
+import { BusinessSearchComponent } from './business-search/business-search.component';
 
 @NgModule({
   declarations: [
@@ -14,14 +18,29 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BCategoriesComponent,
     CategoryDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    BusinessSearchComponent,
+    
   ],
   imports: [
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+
+    // The HttpClientInMemoryWebApiModule modlue intercepts HTTP requests
+    // and returns sumulated server responses.
+    // Remove is whena real server is ready to receive requests.
+
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
-  providers: [],
+ 
   bootstrap: [AppComponent]
 })
+
+
+
+
 export class AppModule { }

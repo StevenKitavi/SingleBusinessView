@@ -1,5 +1,14 @@
+
+<h2>Authorised Dealers </h2>
 <div>
-<h2>My Authorised Dealers </h2>
+    <label>Business name:
+        <input #businessName />
+    </label>
+    <!-- ( click ) will pass input value to add() and then clears the input-->
+
+    <button (click) = "add(businessName.value); businessName.value = ''"> add </button>
+
+</div>
 <ul class="businesses">
     <li *ngFor="let business of businesses">   
 
@@ -8,10 +17,10 @@
     <span class= "badge">{{ business.id }}</span>{{business.name}}
 
     </a>
+    <button class="delete" title="delete business"
+    (click) = "delete (business)">x</button>
     
     </li>
 </ul>
 
 <!-- <app-category-detail [business] = "selectedBusiness"></app-category-detail> -->
-
-</div>
