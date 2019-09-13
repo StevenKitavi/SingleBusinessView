@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "dependecies": [
+        "dist/dependecies"
+      ],
+      "dependecies/*": [
+        "dist/dependecies/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

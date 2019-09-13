@@ -9,20 +9,40 @@ h1 {
     padding-top: 0;
   }
   nav a {
-    padding: 5px 10px;
+    padding: 0px;
+    padding-bottom: 0;
     text-decoration: none;
-    margin-top: 10px;
-    display: inline-block;
-    background-color: #eee;
+    margin-top: 50px;
+    margin-left: 10px;
+    background-color: #607d8c;
     border-radius: 4px;
+    opacity: 1000;
+    
   }
-  nav a:visited, a:link {
-    color: #334953;
+  nav a:visited {
+    color: #ffffff;
   }
-  nav a:hover {
-    color: #039be5;
-    background-color: #cfd8dc;
+  a:link{
+    color: #ffffff;
   }
+  
   nav a.active {
-    color: #039be5;
+    color: #ffffff;
+  }
+
+  .mat-toolbar.mat-primary {
+    background:#34515f;
+    color: #ffffff; 
+  }
+  .mat-tab-group{
+    background-color: #607d8c;
+  }
+  .mat-tab-nav-bar{
+    background-color: #607d8c;
+    
+  }
+  .mat-tab-link {
+    background-color: #ffffff;
+    
+    
   }

@@ -1,8 +1,21 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink ="/dashboard">Dashboard</a> 
-  <a routerLink ="/b-categories">Authoried Dealers</a>
-</nav>
+<mat-toolbar color="primary" class="main-nav mat-elevation-z4">
+    <span>{{title}}</span>
+    <span class="fill-remaining-space"></span>
+  </mat-toolbar>
 
+
+
+
+<nav mat-tab-nav-bar  >
+    <a mat-tab-link routerLink ="/dashboard" > Nairobi Business </a>
+    <a mat-tab-link  routerLink ="/b-categories">Authoried Dealers</a>
+    <a mat-tab-link  routerLink = "naihustle">Get Started Today </a>
+</nav>
 <router-outlet></router-outlet>
-<app-messages></app-messages>
+<!-- <app-messages></app-messages> -->
+
+<!-- <app-header></app-header> -->
+
+<app-footer> </app-footer>
+
+
